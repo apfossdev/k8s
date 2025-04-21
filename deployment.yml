@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: mongo:latest # will update this to mongo:latest from nginx:latest, ideally should just update the image tags, just to check whether rolling updates in deployments are working
+        ports:
+        - containerPort: 80

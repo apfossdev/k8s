@@ -1,0 +1,3 @@
+node_modules/
+
+#gitignore files are recursive, so all the node_modules in any sub-folders here won't be pushed 
