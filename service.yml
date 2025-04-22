@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector: # this selector is used by the service to find all the nodes with the tag below app:nginx and then will create a nodeport for them and expose their ips on this port 
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007  # This port can be any valid port within the NodePort range i.e. 30000-32767
+  type: NodePort

@@ -2,5 +2,10 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
   - role: control-plane
+    extraPortMappings: # we add this extraPortMappings only in a local cluster setup (setup using kind) so that when we hit the private ip of the local machine on this port mentioned below we are port forwarded to one of the nodes exposed on the same port thru the nodeport svc
+    - containerPort: 30007
+      hostPort: 30007
   - role: worker
   - role: worker
+
+
