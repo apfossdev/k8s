@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-backend
+  volumes:
+    - name: env-file
+      secret:
+        secretName: dotfile-secret
+  # if using dotenv then no need the below at all just do the above
+  # template:
+  #   metadata:
+  #     labels:
+  #       app: ecom-backend
+  #   spec:
+  #     containers:
+  #     - name: ecom-backend
+  #       image: 100xdevs/env-backend
+  #       ports:
+  #       - containerPort: 3000
+  #       env:
+  #       - name: DATABASE_URL
+  #         valueFrom:
+  #           secretKeyRef: #this is how you can get the values from the secretMaps
+  #             name: dotfile-secret
+  #             key: database_url
+  #       - name: CACHE_SIZE
+  #         valueFrom:
+  #           configMapKeyRef: #this is how you can get the values from the configMaps
+  #             name: ecom-backend-config
+  #             key: cache_size
+  #       - name: PAYMENT_GATEWAY_URL
+  #         valueFrom:
+  #           configMapKeyRef:
+  #             name: ecom-backend-config
+  #             key: payment_gateway_url
+  #       - name: MAX_CART_ITEMS
+  #         valueFrom:
+  #           configMapKeyRef:
+  #             name: ecom-backend-config
+  #             key: max_cart_items
+  #       - name: SESSION_TIMEOUT
+  #         valueFrom:
+  #           configMapKeyRef:
+  #             name: ecom-backend-config
+  #             key: session_timeout

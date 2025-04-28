@@ -1,50 +1,49 @@
-Name:               3-node-cluster-with-port-mapping-control-plane
+Name:               my-local-cluster-control-plane
 Roles:              control-plane
 Labels:             beta.kubernetes.io/arch=amd64
                     beta.kubernetes.io/os=linux
                     kubernetes.io/arch=amd64
-                    kubernetes.io/hostname=3-node-cluster-with-port-mapping-control-plane
+                    kubernetes.io/hostname=my-local-cluster-control-plane
                     kubernetes.io/os=linux
                     node-role.kubernetes.io/control-plane=
-                    node.kubernetes.io/exclude-from-external-load-balancers=
 Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
                     node.alpha.kubernetes.io/ttl: 0
                     volumes.kubernetes.io/controller-managed-attach-detach: true
-CreationTimestamp:  Tue, 22 Apr 2025 07:13:19 +0000
-Taints:             node-role.kubernetes.io/control-plane:NoSchedule
+CreationTimestamp:  Thu, 24 Apr 2025 06:50:43 +0000
+Taints:             <none>
 Unschedulable:      false
 Lease:
-  HolderIdentity:  3-node-cluster-with-port-mapping-control-plane
+  HolderIdentity:  my-local-cluster-control-plane
   AcquireTime:     <unset>
-  RenewTime:       Tue, 22 Apr 2025 07:15:12 +0000
+  RenewTime:       Mon, 28 Apr 2025 04:32:14 +0000
 Conditions:
   Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
   ----             ------  -----------------                 ------------------                ------                       -------
-  MemoryPressure   False   Tue, 22 Apr 2025 07:13:55 +0000   Tue, 22 Apr 2025 07:13:08 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
-  DiskPressure     False   Tue, 22 Apr 2025 07:13:55 +0000   Tue, 22 Apr 2025 07:13:08 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
-  PIDPressure      False   Tue, 22 Apr 2025 07:13:55 +0000   Tue, 22 Apr 2025 07:13:08 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
-  Ready            True    Tue, 22 Apr 2025 07:13:55 +0000   Tue, 22 Apr 2025 07:13:55 +0000   KubeletReady                 kubelet is posting ready status
+  MemoryPressure   False   Mon, 28 Apr 2025 04:27:14 +0000   Thu, 24 Apr 2025 06:50:43 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Mon, 28 Apr 2025 04:27:14 +0000   Thu, 24 Apr 2025 06:50:43 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Mon, 28 Apr 2025 04:27:14 +0000   Thu, 24 Apr 2025 06:50:43 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Mon, 28 Apr 2025 04:27:14 +0000   Thu, 24 Apr 2025 06:51:16 +0000   KubeletReady                 kubelet is posting ready status
 Addresses:
-  InternalIP:  172.19.0.6
-  Hostname:    3-node-cluster-with-port-mapping-control-plane
+  InternalIP:  172.19.0.2
+  Hostname:    my-local-cluster-control-plane
 Capacity:
   cpu:                8
   ephemeral-storage:  1055762868Ki
   hugepages-1Gi:      0
   hugepages-2Mi:      0
-  memory:             8007700Ki
+  memory:             8007704Ki
   pods:               110
 Allocatable:
   cpu:                8
   ephemeral-storage:  1055762868Ki
   hugepages-1Gi:      0
   hugepages-2Mi:      0
-  memory:             8007700Ki
+  memory:             8007704Ki
   pods:               110
 System Info:
-  Machine ID:                 4eb295ecdf504bd2be8d51c94ce02abc
-  System UUID:                4eb295ecdf504bd2be8d51c94ce02abc
-  Boot ID:                    cd9dd4fe-7449-419d-92d3-76f12d280dfa
+  Machine ID:                 6c8d0e2a33094fafbdc7d1784a53e157
+  System UUID:                6c8d0e2a33094fafbdc7d1784a53e157
+  Boot ID:                    fc5243ba-a1ef-491f-a473-615597b65f2b
   Kernel Version:             5.15.167.4-microsoft-standard-WSL2
   OS Image:                   Debian GNU/Linux 12 (bookworm)
   Operating System:           linux
@@ -54,19 +53,28 @@ System Info:
   Kube-Proxy Version:         v1.32.2
 PodCIDR:                      10.244.0.0/24
 PodCIDRs:                     10.244.0.0/24
-ProviderID:                   kind://docker/3-node-cluster-with-port-mapping/3-node-cluster-with-port-mapping-control-plane
-Non-terminated Pods:          (9 in total)
-  Namespace                   Name                                                                      CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
-  ---------                   ----                                                                      ------------  ----------  ---------------  -------------  ---
-  kube-system                 coredns-668d6bf9bc-g5hqd                                                  100m (1%)     0 (0%)      70Mi (0%)        170Mi (2%)     107s
-  kube-system                 coredns-668d6bf9bc-s5zj9                                                  100m (1%)     0 (0%)      70Mi (0%)        170Mi (2%)     107s
-  kube-system                 etcd-3-node-cluster-with-port-mapping-control-plane                       100m (1%)     0 (0%)      100Mi (1%)       0 (0%)         113s
-  kube-system                 kindnet-bh5wx                                                             100m (1%)     100m (1%)   50Mi (0%)        50Mi (0%)      107s
-  kube-system                 kube-apiserver-3-node-cluster-with-port-mapping-control-plane             250m (3%)     0 (0%)      0 (0%)           0 (0%)         111s
-  kube-system                 kube-controller-manager-3-node-cluster-with-port-mapping-control-plane    200m (2%)     0 (0%)      0 (0%)           0 (0%)         111s
-  kube-system                 kube-proxy-xgjrr                                                          0 (0%)        0 (0%)      0 (0%)           0 (0%)         107s
-  kube-system                 kube-scheduler-3-node-cluster-with-port-mapping-control-plane             100m (1%)     0 (0%)      0 (0%)           0 (0%)         114s
-  local-path-storage          local-path-provisioner-7dc846544d-lrn7w                                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         107s
+ProviderID:                   kind://docker/my-local-cluster/my-local-cluster-control-plane
+Non-terminated Pods:          (18 in total)
+  Namespace                   Name                                                      CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                                      ------------  ----------  ---------------  -------------  ---
+  argocd                      argocd-application-controller-0                           0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-applicationset-controller-986b445f-rhpxb           0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-dex-server-86d46dc659-cnjg2                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-notifications-controller-6b57cb9df8-gkzzc          0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-redis-7bb46fc4dd-gp84n                             0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-repo-server-55475d8c9f-ssfhp                       0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  argocd                      argocd-server-68789d47c9-z7bp4                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  kube-system                 coredns-668d6bf9bc-b7pc9                                  100m (1%)     0 (0%)      70Mi (0%)        170Mi (2%)     3d21h
+  kube-system                 coredns-668d6bf9bc-gpmq5                                  100m (1%)     0 (0%)      70Mi (0%)        170Mi (2%)     3d21h
+  kube-system                 etcd-my-local-cluster-control-plane                       100m (1%)     0 (0%)      100Mi (1%)       0 (0%)         3d21h
+  kube-system                 kindnet-wmxgg                                             100m (1%)     100m (1%)   50Mi (0%)        50Mi (0%)      3d21h
+  kube-system                 kube-apiserver-my-local-cluster-control-plane             250m (3%)     0 (0%)      0 (0%)           0 (0%)         3d21h
+  kube-system                 kube-controller-manager-my-local-cluster-control-plane    200m (2%)     0 (0%)      0 (0%)           0 (0%)         3d21h
+  kube-system                 kube-proxy-k9l5z                                          0 (0%)        0 (0%)      0 (0%)           0 (0%)         3d21h
+  kube-system                 kube-scheduler-my-local-cluster-control-plane             100m (1%)     0 (0%)      0 (0%)           0 (0%)         3d21h
+  local-path-storage          local-path-provisioner-7dc846544d-2jtxm                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         3d21h
+  myapp                       myapp-b549444ff-g55vz                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
+  myapp                       myapp-b549444ff-rf82p                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         2d18h
 Allocated resources:
   (Total limits may be over 100 percent, i.e., overcommitted.)
   Resource           Requests    Limits
@@ -76,188 +84,4 @@ Allocated resources:
   ephemeral-storage  0 (0%)      0 (0%)
   hugepages-1Gi      0 (0%)      0 (0%)
   hugepages-2Mi      0 (0%)      0 (0%)
-Events:
-  Type     Reason                             Age                    From             Message
-  ----     ------                             ----                   ----             -------
-  Normal   Starting                           99s                    kube-proxy       
-  Normal   NodeHasSufficientMemory            2m14s (x8 over 2m14s)  kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasSufficientMemory
-  Normal   NodeHasNoDiskPressure              2m14s (x8 over 2m14s)  kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasNoDiskPressure
-  Normal   NodeHasSufficientPID               2m14s (x7 over 2m14s)  kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasSufficientPID
-  Normal   NodeAllocatableEnforced            2m14s                  kubelet          Updated Node Allocatable limit across pods
-  Normal   Starting                           111s                   kubelet          Starting kubelet.
-  Warning  CgroupV1                           111s                   kubelet          cgroup v1 support is in maintenance mode, please migrate to cgroup v2
-  Normal   NodeAllocatableEnforced            111s                   kubelet          Updated Node Allocatable limit across pods
-  Normal   NodeHasSufficientMemory            111s                   kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasSufficientMemory
-  Normal   NodeHasNoDiskPressure              111s                   kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasNoDiskPressure
-  Normal   NodeHasSufficientPID               111s                   kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeHasSufficientPID
-  Warning  PossibleMemoryBackedVolumesOnDisk  111s                   kubelet          The tmpfs noswap option is not supported. Memory-backed volumes (e.g. secrets, emptyDirs, etc.) might be swapped to disk and should no longer be considered secure.
-  Normal   RegisteredNode                     108s                   node-controller  Node 3-node-cluster-with-port-mapping-control-plane event: Registered Node 3-node-cluster-with-port-mapping-control-plane in Controller
-  Normal   NodeReady                          80s                    kubelet          Node 3-node-cluster-with-port-mapping-control-plane status is now: NodeReady
-
-
-Name:               3-node-cluster-with-port-mapping-worker
-Roles:              <none>
-Labels:             beta.kubernetes.io/arch=amd64
-                    beta.kubernetes.io/os=linux
-                    kubernetes.io/arch=amd64
-                    kubernetes.io/hostname=3-node-cluster-with-port-mapping-worker
-                    kubernetes.io/os=linux
-Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
-                    node.alpha.kubernetes.io/ttl: 0
-                    volumes.kubernetes.io/controller-managed-attach-detach: true
-CreationTimestamp:  Tue, 22 Apr 2025 07:13:32 +0000
-Taints:             <none>
-Unschedulable:      false
-Lease:
-  HolderIdentity:  3-node-cluster-with-port-mapping-worker
-  AcquireTime:     <unset>
-  RenewTime:       Tue, 22 Apr 2025 07:15:10 +0000
-Conditions:
-  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
-  ----             ------  -----------------                 ------------------                ------                       -------
-  MemoryPressure   False   Tue, 22 Apr 2025 07:14:00 +0000   Tue, 22 Apr 2025 07:13:32 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
-  DiskPressure     False   Tue, 22 Apr 2025 07:14:00 +0000   Tue, 22 Apr 2025 07:13:32 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
-  PIDPressure      False   Tue, 22 Apr 2025 07:14:00 +0000   Tue, 22 Apr 2025 07:13:32 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
-  Ready            True    Tue, 22 Apr 2025 07:14:00 +0000   Tue, 22 Apr 2025 07:14:00 +0000   KubeletReady                 kubelet is posting ready status
-Addresses:
-  InternalIP:  172.19.0.7
-  Hostname:    3-node-cluster-with-port-mapping-worker
-Capacity:
-  cpu:                8
-  ephemeral-storage:  1055762868Ki
-  hugepages-1Gi:      0
-  hugepages-2Mi:      0
-  memory:             8007700Ki
-  pods:               110
-Allocatable:
-  cpu:                8
-  ephemeral-storage:  1055762868Ki
-  hugepages-1Gi:      0
-  hugepages-2Mi:      0
-  memory:             8007700Ki
-  pods:               110
-System Info:
-  Machine ID:                 91f3a136fbd34e8082a5fd7f2e697f2d
-  System UUID:                91f3a136fbd34e8082a5fd7f2e697f2d
-  Boot ID:                    cd9dd4fe-7449-419d-92d3-76f12d280dfa
-  Kernel Version:             5.15.167.4-microsoft-standard-WSL2
-  OS Image:                   Debian GNU/Linux 12 (bookworm)
-  Operating System:           linux
-  Architecture:               amd64
-  Container Runtime Version:  containerd://2.0.2
-  Kubelet Version:            v1.32.2
-  Kube-Proxy Version:         v1.32.2
-PodCIDR:                      10.244.2.0/24
-PodCIDRs:                     10.244.2.0/24
-ProviderID:                   kind://docker/3-node-cluster-with-port-mapping/3-node-cluster-with-port-mapping-worker
-Non-terminated Pods:          (2 in total)
-  Namespace                   Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
-  ---------                   ----                ------------  ----------  ---------------  -------------  ---
-  kube-system                 kindnet-t644v       100m (1%)     100m (1%)   50Mi (0%)        50Mi (0%)      103s
-  kube-system                 kube-proxy-2lgtz    0 (0%)        0 (0%)      0 (0%)           0 (0%)         103s
-Allocated resources:
-  (Total limits may be over 100 percent, i.e., overcommitted.)
-  Resource           Requests   Limits
-  --------           --------   ------
-  cpu                100m (1%)  100m (1%)
-  memory             50Mi (0%)  50Mi (0%)
-  ephemeral-storage  0 (0%)     0 (0%)
-  hugepages-1Gi      0 (0%)     0 (0%)
-  hugepages-2Mi      0 (0%)     0 (0%)
-Events:
-  Type     Reason                   Age                  From             Message
-  ----     ------                   ----                 ----             -------
-  Normal   Starting                 93s                  kube-proxy       
-  Normal   CIDRAssignmentFailed     103s                 cidrAllocator    Node 3-node-cluster-with-port-mapping-worker status is now: CIDRAssignmentFailed
-  Warning  CgroupV1                 103s                 kubelet          cgroup v1 support is in maintenance mode, please migrate to cgroup v2
-  Normal   NodeHasSufficientMemory  103s (x2 over 103s)  kubelet          Node 3-node-cluster-with-port-mapping-worker status is now: NodeHasSufficientMemory
-  Normal   NodeHasNoDiskPressure    103s (x2 over 103s)  kubelet          Node 3-node-cluster-with-port-mapping-worker status is now: NodeHasNoDiskPressure
-  Normal   NodeHasSufficientPID     103s (x2 over 103s)  kubelet          Node 3-node-cluster-with-port-mapping-worker status is now: NodeHasSufficientPID
-  Normal   NodeAllocatableEnforced  103s                 kubelet          Updated Node Allocatable limit across pods
-  Normal   RegisteredNode           98s                  node-controller  Node 3-node-cluster-with-port-mapping-worker event: Registered Node 3-node-cluster-with-port-mapping-worker in Controller
-  Normal   NodeReady                75s                  kubelet          Node 3-node-cluster-with-port-mapping-worker status is now: NodeReady
-
-
-Name:               3-node-cluster-with-port-mapping-worker2
-Roles:              <none>
-Labels:             beta.kubernetes.io/arch=amd64
-                    beta.kubernetes.io/os=linux
-                    kubernetes.io/arch=amd64
-                    kubernetes.io/hostname=3-node-cluster-with-port-mapping-worker2
-                    kubernetes.io/os=linux
-Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
-                    node.alpha.kubernetes.io/ttl: 0
-                    volumes.kubernetes.io/controller-managed-attach-detach: true
-CreationTimestamp:  Tue, 22 Apr 2025 07:13:32 +0000
-Taints:             <none>
-Unschedulable:      false
-Lease:
-  HolderIdentity:  3-node-cluster-with-port-mapping-worker2
-  AcquireTime:     <unset>
-  RenewTime:       Tue, 22 Apr 2025 07:15:10 +0000
-Conditions:
-  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
-  ----             ------  -----------------                 ------------------                ------                       -------
-  MemoryPressure   False   Tue, 22 Apr 2025 07:15:10 +0000   Tue, 22 Apr 2025 07:13:31 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
-  DiskPressure     False   Tue, 22 Apr 2025 07:15:10 +0000   Tue, 22 Apr 2025 07:13:31 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
-  PIDPressure      False   Tue, 22 Apr 2025 07:15:10 +0000   Tue, 22 Apr 2025 07:13:31 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
-  Ready            True    Tue, 22 Apr 2025 07:15:10 +0000   Tue, 22 Apr 2025 07:14:00 +0000   KubeletReady                 kubelet is posting ready status
-Addresses:
-  InternalIP:  172.19.0.5
-  Hostname:    3-node-cluster-with-port-mapping-worker2
-Capacity:
-  cpu:                8
-  ephemeral-storage:  1055762868Ki
-  hugepages-1Gi:      0
-  hugepages-2Mi:      0
-  memory:             8007700Ki
-  pods:               110
-Allocatable:
-  cpu:                8
-  ephemeral-storage:  1055762868Ki
-  hugepages-1Gi:      0
-  hugepages-2Mi:      0
-  memory:             8007700Ki
-  pods:               110
-System Info:
-  Machine ID:                 086107f637f8486da812f3ac543b4744
-  System UUID:                086107f637f8486da812f3ac543b4744
-  Boot ID:                    cd9dd4fe-7449-419d-92d3-76f12d280dfa
-  Kernel Version:             5.15.167.4-microsoft-standard-WSL2
-  OS Image:                   Debian GNU/Linux 12 (bookworm)
-  Operating System:           linux
-  Architecture:               amd64
-  Container Runtime Version:  containerd://2.0.2
-  Kubelet Version:            v1.32.2
-  Kube-Proxy Version:         v1.32.2
-PodCIDR:                      10.244.1.0/24
-PodCIDRs:                     10.244.1.0/24
-ProviderID:                   kind://docker/3-node-cluster-with-port-mapping/3-node-cluster-with-port-mapping-worker2
-Non-terminated Pods:          (3 in total)
-  Namespace                   Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
-  ---------                   ----                ------------  ----------  ---------------  -------------  ---
-  default                     nginx-pod           0 (0%)        0 (0%)      0 (0%)           0 (0%)         62s
-  kube-system                 kindnet-8q7d7       100m (1%)     100m (1%)   50Mi (0%)        50Mi (0%)      103s
-  kube-system                 kube-proxy-bn2gq    0 (0%)        0 (0%)      0 (0%)           0 (0%)         103s
-Allocated resources:
-  (Total limits may be over 100 percent, i.e., overcommitted.)
-  Resource           Requests   Limits
-  --------           --------   ------
-  cpu                100m (1%)  100m (1%)
-  memory             50Mi (0%)  50Mi (0%)
-  ephemeral-storage  0 (0%)     0 (0%)
-  hugepages-1Gi      0 (0%)     0 (0%)
-  hugepages-2Mi      0 (0%)     0 (0%)
-Events:
-  Type     Reason                             Age                  From             Message
-  ----     ------                             ----                 ----             -------
-  Normal   Starting                           95s                  kube-proxy       
-  Warning  PossibleMemoryBackedVolumesOnDisk  104s                 kubelet          The tmpfs noswap option is not supported. Memory-backed volumes (e.g. secrets, emptyDirs, etc.) might be swapped to disk and should no longer be considered secure.
-  Normal   Starting                           104s                 kubelet          Starting kubelet.
-  Warning  CgroupV1                           104s                 kubelet          cgroup v1 support is in maintenance mode, please migrate to cgroup v2
-  Normal   NodeHasSufficientMemory            104s (x2 over 104s)  kubelet          Node 3-node-cluster-with-port-mapping-worker2 status is now: NodeHasSufficientMemory
-  Normal   NodeHasNoDiskPressure              104s (x2 over 104s)  kubelet          Node 3-node-cluster-with-port-mapping-worker2 status is now: NodeHasNoDiskPressure
-  Normal   NodeHasSufficientPID               104s (x2 over 104s)  kubelet          Node 3-node-cluster-with-port-mapping-worker2 status is now: NodeHasSufficientPID
-  Normal   NodeAllocatableEnforced            104s                 kubelet          Updated Node Allocatable limit across pods
-  Normal   RegisteredNode                     103s                 node-controller  Node 3-node-cluster-with-port-mapping-worker2 event: Registered Node 3-node-cluster-with-port-mapping-worker2 in Controller
-  Normal   NodeReady                          75s                  kubelet          Node 3-node-cluster-with-port-mapping-worker2 status is now: NodeReady
+Events:              <none>
